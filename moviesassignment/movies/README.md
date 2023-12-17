@@ -16,7 +16,7 @@ This is a React app that I made that pulls data from this website using the TMDB
 + New Actor Details Page
 + New Actor Search Filter
 + Pagination attempted but incomplete
-
+  
 ## Setup requirements.
 
 No non-standard setup requirements
