@@ -21,28 +21,25 @@ const LoginForm = props => {
     const context = useContext(AuthContext)
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-    const login = () => {
-        context.authenticate(userName, password);
-      };
-
-      const navigate = useNavigate();
-
-   // Set 'from' to path where browser is redirected after a successful login.
-  // Either / or the protected path user tried to access.
-
-  if (context.isAuthenticated === true) {
-    navigate("/", { replace: true });
-  }
+    const login = async () => {
+        await context.authenticate(userName, password);
+        if (context.isAuthenticated) {
+          // Redirect to the home page after successful authentication
+          navigate("/");
+        }
+      }
+    
 
     return (
         <Paper sx={style}>
         <Grid2 component="form" container spacing={2}>
             <Grid2 xs={12}>
-            <TextField id="filled-basic" label="User Name" variant="filled" sx={root} onChange={(event) => {setUserName(event.target.value)}}/>
+            <TextField id="usernamefield" label="User Name" variant="filled" sx={root} onChange={(event) => {setUserName(event.target.value)}}/>
             </Grid2>
             <Grid2 xs={12}>
-            <TextField id="filled-basic" label="Password" type="password" variant="filled" onChange={(event) => {setPassword(event.target.value)}}sx={root}/>
+            <TextField id="passwordfield" label="Password" type="password" variant="filled" onChange={(event) => {setPassword(event.target.value)}}sx={root}/>
             </Grid2>
             <Grid2 sx={2}>
             <Button variant="contained" sx={{ width: 100 }} onClick={login}>Login</Button>

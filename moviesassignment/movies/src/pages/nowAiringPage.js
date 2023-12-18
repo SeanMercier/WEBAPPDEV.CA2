@@ -1,6 +1,6 @@
 import React from "react";
 import { getNowAiring } from "../api/tmdb-api";
-import PageTemplate from "../components/templateTvShowsPage";
+import TvShowsPageTemplate from "../components/templateTvShowsPage";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 
@@ -21,11 +21,10 @@ const NowAiringPage = (props) => {
     localStorage.setItem('favorites', JSON.stringify(favorites))
     
     return (
-        <PageTemplate
-        title='Now Airing TV Shows'
+        <TvShowsPageTemplate
+        name='Now Airing TV Shows'
         tvShows={tvShows}
-        >
-        </PageTemplate>
+        />
     );
     }
 export default NowAiringPage;

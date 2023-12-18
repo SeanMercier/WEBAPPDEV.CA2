@@ -28,6 +28,8 @@ import NowAiringPage from "./pages/nowAiringPage";
 import SignUpPage from "./pages/signUpPage";
 import LoginPage from "./pages/loginPage";
 
+import ProtectedRoute from "./protectedRoutes";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -47,8 +49,11 @@ const App = () => {
         <MoviesContextProvider>
           <ActorContextProvider>
             <Routes>
+            <Route element={ProtectedRoute}/>
               <Route path="/signup" element={<SignUpPage />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="*" element={<Navigate to="/" />} />
               <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
               <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
               <Route path="/movies/trending" element={<TrendingMoviesPage />} />
@@ -56,8 +61,6 @@ const App = () => {
               <Route path="/movies/topRated" element={<TopRatedMoviesPage />} />
               <Route path="/reviews/:id" element={<MovieReviewPage />} />
               <Route path="/movies/:id" element={<MoviePage />} />
-              <Route path="/" element={<HomePage />} />
-              <Route path="*" element={<Navigate to="/" />} />
               <Route path="/reviews/form" element={<AddMovieReviewPage />} />
               <Route path="/actors/" element={<ActorsPage />} />
               <Route path="/actors/:id" element={<ActorDetailsPage />} />
