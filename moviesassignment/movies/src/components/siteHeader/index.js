@@ -25,6 +25,8 @@ const SiteHeader = ({ history }) => {
 
   const menuOptions = [
     { label: "Home", path: "/" },
+    { label: "Login", path: "/login" },
+    { label: "Signup", path: "/signup" },
     { label: "Movie Favorites", path: "/movies/favorites" },
     { label: "Upcoming Movies", path: "/movies/upcoming" },
     { label: "Trending Movies", path: "/movies/trending"},
@@ -33,8 +35,8 @@ const SiteHeader = ({ history }) => {
     { label: "Actors", path: "/actors" },
     { label: "Actor Favourites", path: "/actors/favorites"},
     { label: "TV Shows", path: "/tv" },
-    { label: "Regions", path: "/regions" },
     { label: "Now Airing", path: "/now_airing" },
+    { label: "Regions", path: "/regions" },
   ];
 
   const handleMenuSelect = (pageURL) => {

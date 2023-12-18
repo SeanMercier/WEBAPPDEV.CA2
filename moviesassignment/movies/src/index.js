@@ -6,6 +6,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import SiteHeader from "./components/siteHeader";
 import MoviesContextProvider from "./contexts/moviesContext";
 import ActorContextProvider from "./contexts/actorContext";
+import AuthContextProvider from "./contexts/authContext";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
@@ -24,6 +25,9 @@ import AvailableRegionsPage from "./pages/availableRegionsPage";
 import TVShowsPage from "./pages/tvShowsPage";
 import NowAiringPage from "./pages/nowAiringPage";
 
+import SignUpPage from "./pages/signUpPage";
+import LoginPage from "./pages/loginPage";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -39,9 +43,12 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
+        <AuthContextProvider>
         <MoviesContextProvider>
           <ActorContextProvider>
             <Routes>
+              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/login" element={<LoginPage />} />
               <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
               <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
               <Route path="/movies/trending" element={<TrendingMoviesPage />} />
@@ -63,6 +70,7 @@ const App = () => {
             </Routes>
           </ActorContextProvider>
         </MoviesContextProvider>
+        </AuthContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
