@@ -31,22 +31,24 @@ export const getActors = () => {
   ).then(res => res.json());
 };
 
-export const login = (username, password) => {
-  return fetch('/api/users', {
+export const login = async (username, password) => {
+  const response = await fetch('http://localhost:8080/api/users', {
       headers: {
           'Content-Type': 'application/json'
       },
       method: 'post',
       body: JSON.stringify({ username: username, password: password })
-  }).then(res => res.json())
+  });
+  return response.json();
 };
 
-export const signup = (username, password) => {
-  return fetch('/api/users?action=register', {
+export const signup = async (username, password) => {
+  const response = await fetch('http://localhost:8080/api/users?action=register', {
       headers: {
           'Content-Type': 'application/json'
       },
       method: 'post',
       body: JSON.stringify({ username: username, password: password })
-  }).then(res => res.json())
+  });
+  return response.json();
 };
