@@ -1,5 +1,5 @@
 export const getMovies = () => {
-return fetch('/api/movies', {
+return fetch('http://localhost:8080/api/movies', {
   headers: {
     'Authorization': window.localStorage.getItem('token')
   }
