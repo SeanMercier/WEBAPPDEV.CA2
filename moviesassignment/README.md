@@ -17,31 +17,20 @@ A bullet-point list of the ADDITIONAL features you have implemented in the API *
 
 npm run dev on the movies-api folder.
 npm start on the movies folder.
+download any necessary dependencies.
 
 ## API Configuration
 
-Describe any configuration that needs to take place before running the API. For example, creating an `.env` file and what variables to put in it. Give an example of how this might be done.
-
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE README OR ON GITHUB, just placeholders as indicated below:
-
-______________________
-NODEENV=development
-PORT=8080
-HOST=
-mongoDB=YourMongoURL
-seedDb=true
-secret=YourJWTSecret
-______________________
+Create an ".env" file with MongoDB KEY, SECRET, TMDB KEY, FAST_REFRESH=false and PORT=8080.
 
 ## API Design
 Give an overview of your web API design, perhaps similar to the following: 
 
 - /api/movies | GET | Gets a list of movies 
-- /api/movies/{movieid} | GET | Gets a single movie 
-- /api/movies/{movieid}/reviews | GET | Get all reviews for movie 
-- /api/movies/{movieid}/reviews | POST | Create a new review for Movie 
-
-If you have your API design on an online platform or graphic, please link to it (e.g. [Swaggerhub](https://app.swaggerhub.com/)).
+- /api/movies | GET | Gets a list of movies 
+- /api/genres | GET | Gets a list of movie genres.
+- /api/users | POST | Logs in a new user if authentication is successful.
+- /api/users?action=register | POST | Registers a new user to the app.
 
 ## Security and Authentication
 
@@ -49,8 +38,7 @@ All Routes but the Home Page, SignUp and Login Pages are protected and require t
 
 ## Integrating with React App
 
-Describe how you integrated your React app with the API. List the views that use your Web API instead of the TMDB API. Describe any other updates to the React app from Assignment One.
+The main views that use my web API are the login, signup and home pages. I added 3 new views for TV Shows, Now Airing TV Shows and Availability Regions. Those views take data from the tmdb-api. Pagination was attempted again but unsuccessful.
 
 ## Independent learning (if relevant)
 
-Briefly explain any non-standard features developed for the app.

@@ -12,7 +12,6 @@ return fetch('http://localhost:8080/api/movies', {
 });
 };
 
-
 export const getGenres = () => {
   return fetch(
      '/api/genres',{headers: {
