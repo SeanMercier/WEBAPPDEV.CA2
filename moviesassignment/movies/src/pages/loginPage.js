@@ -12,7 +12,7 @@ const LoginPage = props => {
 
     const login = async () => {
         try{
-        await context.authenticate(userName, password);
+        context.authenticate(userName, password);
     } catch (error) {
         setError("Invalid username or password");
       }

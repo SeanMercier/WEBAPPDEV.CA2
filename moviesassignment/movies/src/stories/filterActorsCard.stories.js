@@ -3,7 +3,7 @@ import FilterActorsCard from "../components/filterActorsCard";
 
 export default {
   title: "Home Page/FilterActorsCard",
-  component: FilterMoviesCard,
+  component: FilterActorsCard,
 };
 
 export const Basic = () => {

@@ -8,9 +8,8 @@ import { Paper } from "@mui/material";
 import RemoveFromActorFavoritesIcon from "../components/cardIcons/removeFromActorFavorites";
 
 const FavoriteActorsPage = () => {
-  const { favorites: actorsIds, removeFromActorFavorites } = useContext(
-    ActorContext
-  );
+  const {favorites: actorsIds } = useContext(ActorContext);
+
 
   const favoriteActorQueries = useQueries(
     actorsIds.map((actorId) => {

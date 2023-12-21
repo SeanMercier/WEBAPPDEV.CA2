@@ -22,15 +22,6 @@ export const getGenres = () => {
   ).then(res => res.json());
 };
 
-export const getActors = () => {
-  return fetch(
-     '/api/actors',{headers: {
-       'Authorization': window.localStorage.getItem('token')
-    }
-  }
-  ).then(res => res.json());
-};
-
 export const login = async (username, password) => {
   const response = await fetch('http://localhost:8080/api/users', {
       headers: {
